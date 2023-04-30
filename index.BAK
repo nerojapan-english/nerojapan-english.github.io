@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TestApp</title>
+    <link rel="manifest" href="manifest.json">
+    <!-- 以下は、自動で追加されたコード -->
+    <link rel="apple-touch-icon" href="icons/apple-icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <!-- 自動で追加されたコードここまで -->
+
+
+    <!-- clockのCSSとJS -->
+    <!-- 文字コードの宣言 -->
+    <meta charset="UTF-8">
+    <!-- ページのタイトル(ブラウザのタイトルバーに表示) -->
+    <title>jsClock-simple</title>
+    <!-- スタイルシート(CSS)読み込み -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- JavaScript読み込み -->
+<!--     <script src="./clock.js"></script> -->
+    <script src="./calc.js"></script>
+
+<style type="text/css">
+
+</style>
+
+
+
+  </head>
+  <body>
+ <script src="js/count.js"></script>
+<!--     <h1>TestApp</h1>         -->
+<!--     <img src="logo.svg">     -->
+
+    <!-- 時計枠 -->
+<!--     <div id="clock_frame">         -->
+        <!-- 日付部分 -->
+<!--    <span id="clock_date"></span>   -->
+        <!-- 時刻部分 -->
+<!--    <span id="clock_time"></span>   -->
+<!--</div>-->
+    
+    <div>&nbsp;</div>
+    <p></p>
+    <!-- 計算式 -->
+    <div id="formula">
+        <div>&nbsp;</div>
+        <div id="fm_no0"></div>
+        <div id="fm_no1"></div>
+        <div id="fm_no2"></div>
+        <div id="fm_no3"></div>
+        <div id="fm_no4"></div>
+        <div id="fm_no5"></div>
+        <div id="fm_no6"></div>
+        <div id="fm_no7"></div>
+        <div id="fm_no8"></div>
+        <div id="fm_no9"></div>
+        <div>&nbsp;</div>
+    </div>
+    <p></p>
+
+    <!-- x = ? -->
+    <div id="answer">
+        <div>&nbsp;</div>
+        <div id="ans_no0" onclick="onClickAns(0)">x = ?</div>
+        <div id="ans_no1" onclick="onClickAns(1)">x = ?</div>
+        <div id="ans_no2" onclick="onClickAns(2)">x = ?</div>
+        <div id="ans_no3" onclick="onClickAns(3)">x = ?</div>
+        <div id="ans_no4" onclick="onClickAns(4)">x = ?</div>
+        <div id="ans_no5" onclick="onClickAns(5)">x = ?</div>
+        <div id="ans_no6" onclick="onClickAns(6)">x = ?</div>
+        <div id="ans_no7" onclick="onClickAns(7)">x = ?</div>
+        <div id="ans_no8" onclick="onClickAns(8)">x = ?</div>
+        <div id="ans_no9" onclick="onClickAns(9)">x = ?</div>
+        <div>&nbsp;</div>
+    </div>
+
+
+    <p></p>
+    <!-- ボタン -->
+    <div id="next" onclick="onClickNext()">&nbsp;Next&nbsp; </div>
+    <p></p>
+    <div class="wrapper">
+        <div id="countDisplay" class="count-display">0</div>
+        <div class="btns">
+            <button id="countDown" class="btn">up</button>
+            <button id="countUp" class="btn">down</button>
+        </div>
+        <button id="countReset"  class="reset">reset</button>
+    </div>
+<script>
+
+//
+window.onload = function(){
+init();
+}
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./serviceworker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    }    
+
+
+</script>
+</body></html>

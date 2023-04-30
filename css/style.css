@@ -1,0 +1,70 @@
+/**/
+/* Google Webフォントを利用設定するCSSをインポート */
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps);
+
+/* body要素(全体) */
+body
+{
+    /* 文字色を白に */
+    color: black;
+    /* 背景色を黒に */
+/*    background-color: black;*/
+}
+
+
+/* idのスタイルは#を頭につける。classは. */
+/* 同じスタイルを複数個所に使いまわすときはclassのほうがいい */
+
+
+
+
+#next{
+  display:inline-block;
+  text-align:center;
+  color: red;  display: block;
+  cursor: pointer;
+/*  border: 5px solid #232323; */
+  float:left;
+  margin-right: 5px;
+  font-family:"Comic Sans MS";
+  font-size: 6rem; /* レスポンシブサイズ */
+/*background-color: #c4e6ee;
+border-radius: 40px 40px 40px 40px;*/
+}
+
+#formula{
+  text-align:left;
+  font-size: 6rem; /* レスポンシブサイズ */
+  color: gray;  
+  line-height:1;
+  margin:0;
+  font-family:"Comic Sans MS";
+  font-style: italic;
+  font-variant-numeric:tabular-nums;/* 等幅.効果なし */
+  float: left;
+  margin-bottom: 1rem;
+}
+
+#answer{
+  text-align:left;
+  font-size: 6rem; /* レスポンシブサイズ */
+  color: gray;  
+  line-height:1;
+  margin:0;
+  font-family:"Comic Sans MS";
+  font-style: italic;
+  font-variant-numeric:tabular-nums;/* 等幅.効果なし */
+  style="text-align:right"/* なんでか順番変えるとダメ */
+  float: left;
+  cursor: pointer;
+  background-color: #e8f8f8;
+  border-radius: 40px 40px 40px 40px;
+}
+
+
+p {
+  margin-bottom: 100px;
+}
+
+
+
