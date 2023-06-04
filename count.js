@@ -44,30 +44,58 @@ openReq.onsuccess = function (event) {
     }
 
 
-    document.getElementById('countUp').addEventListener('click', function () {
-        count++;
-        var putReq = updateDb(db, storeName, count);
+    document.getElementById('btn1').addEventListener('click', function () {
+//        count++;
+//        var putReq = updateDb(db, storeName, 1);
+        updateDb(db, storeName, 1);
 
-        putReq.onsuccess = function (event) {
-            console.log('更新成功');
-            document.getElementById('countDisplay').innerHTML = count;
-        }
-        putReq.onerror = function (event) {
-            console.log('更新失敗');
-        }
+//        putReq.onsuccess = function (event) {
+//            console.log('更新成功');
+            document.getElementById('countDisplay').innerHTML = 1;
+//        }
+//        putReq.onerror = function (event) {
+//            console.log('更新失敗');
+//        }
     });
 
-    document.getElementById('countDown').addEventListener('click', function () {
-        count--;
-        var putReq = updateDb(db, storeName, count);
+    document.getElementById('btn2').addEventListener('click', function () {
+//        count--;
+//        var putReq = updateDb(db, storeName, 2);
+        updateDb(db, storeName, 2);
 
-        putReq.onsuccess = function (event) {
-            console.log('更新成功');
-            document.getElementById('countDisplay').innerHTML = count;
-        }
-        putReq.onerror = function (event) {
-            console.log('更新失敗');
-        }
+//        putReq.onsuccess = function (event) {
+//            console.log('更新成功');
+            document.getElementById('countDisplay').innerHTML = 2;
+//        }
+//        putReq.onerror = function (event) {
+//            console.log('更新失敗');
+//        }
+    });
+    document.getElementById('btn3').addEventListener('click', function () {
+//        count--;
+//        var putReq = updateDb(db, storeName, 3);
+        updateDb(db, storeName, 3);
+
+//        putReq.onsuccess = function (event) {
+//            console.log('更新成功');
+            document.getElementById('countDisplay').innerHTML = 3;
+//        }
+//        putReq.onerror = function (event) {
+//            console.log('更新失敗');
+//        }
+    });
+    document.getElementById('btn4').addEventListener('click', function () {
+//        count--;
+//        var putReq = updateDb(db, storeName, 4);
+        updateDb(db, storeName, 4);
+
+//        putReq.onsuccess = function (event) {
+//            console.log('更新成功');
+            document.getElementById('countDisplay').innerHTML = 4;
+//        }
+//        putReq.onerror = function (event) {
+//            console.log('更新失敗');
+//        }
     });
 
     document.getElementById('countReset').addEventListener('click', function () {
@@ -81,14 +109,121 @@ openReq.onsuccess = function (event) {
         putReq.onerror = function (event) {
             console.log('更新失敗');
         }
-    });    
+    });
+
+
+
+
+    document.getElementById('next').addEventListener('click', function () {
+
+	  init();
+//	            document.getElementById('countDisplay').innerHTML = get_level(num1);
+		var db = event.target.result;
+	    var trans = db.transaction(store_name, "readwrite");
+	    var store = trans.objectStore(store_name);
+
+        let request = store.openCursor(IDBKeyRange.only(num1));
+        request.onsuccess = (event) => {
+            let cursor = request.result;
+            if (cursor) {
+                // cursor.valueはfooさんのキー値Javascriptオブジェクト
+                // memoキー値を更新
+    			var level = cursor.value.cnt;
+	            document.getElementById('countDisplay').innerHTML = get_level(level);
+//                cursor.value.memo = memo;
+//                let updateRequest = cursor.update(cursor.value);
+//                updateRequest.onsuccess = function () {
+//                    console.log("更新成功", updateRequest.result);
+//                };
+//                cursor.continue();
+            }
+        }
+
+
+	  });
+
+
+
+
 }
 
 function updateDb (db, store_name, cnt) {
     var trans = db.transaction(store_name, "readwrite");
     var store = trans.objectStore(store_name);
-    return store.put({
-        id: 1,
-        cnt: cnt
-    });
+//    return store.put({
+//        id:num1,
+//        cnt: cnt
+//    });
+
+
+        let request = store.openCursor(IDBKeyRange.only(num1));
+        request.onsuccess = (event) => {
+            let cursor = request.result;
+            if (cursor) {
+                // cursor.valueはfooさんのキー値Javascriptオブジェクト
+                // memoキー値を更新
+//    			var level = cursor.value.cnt;
+
+                cursor.value.cnt = cnt;
+                let updateRequest = cursor.update(cursor.value);
+                updateRequest.onsuccess = function () {
+                   console.log("更新成功", updateRequest.result);
+                };
+                cursor.continue();
+            }
+        }
+
+
+
+
 }
+
+
+function get_level(num){
+
+    var db = event.target.result;
+    var trans = db.transaction(storeName, 'readonly');
+    var store = trans.objectStore(storeName);
+//    var level = event.target.result.cnt;
+
+
+
+
+    // testdbデータベースオープン
+
+        // membersオブジェクトストアからfooさんのレコードをフェッチ
+        let request = store.openCursor(IDBKeyRange.only(num));
+        request.onsuccess = (event) => {
+            let cursor = request.result;
+            if (cursor) {
+                // cursor.valueはfooさんのキー値Javascriptオブジェクト
+                // memoキー値を更新
+    			var level = cursor.value.cnt;
+
+//                cursor.value.memo = memo;
+//                let updateRequest = cursor.update(cursor.value);
+//                updateRequest.onsuccess = function () {
+//                    console.log("更新成功", updateRequest.result);
+//                };
+//                cursor.continue();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+	return level;
+}
+
+
+
+
+

@@ -27,38 +27,48 @@ body
   float:left;
   margin-right: 5px;
   font-family:"Comic Sans MS";
+/*  font-family:"Yu Gothic UI";*/
   font-size: 6rem; /* レスポンシブサイズ */
 /*background-color: #c4e6ee;
 border-radius: 40px 40px 40px 40px;*/
 }
 
+#word{
+  background-color: #e8f8f8;
+  border-radius: 40px 40px 40px 40px;
+}
+
 #formula{
   text-align:left;
-  font-size: 6rem; /* レスポンシブサイズ */
+  font-size: 4rem; /* レスポンシブサイズ */
   color: gray;  
   line-height:1;
   margin:0;
   font-family:"Comic Sans MS";
-  font-style: italic;
+/*  font-family:"Yu Gothic UI";*/
+/*  font-style: italic;*/
   font-variant-numeric:tabular-nums;/* 等幅.効果なし */
-  float: left;
+/*  float: left;*/
   margin-bottom: 1rem;
+/*  background-color: #e8f8f8;*/
+/*  border-radius: 40px 40px 40px 40px;*/
 }
 
 #answer{
   text-align:left;
-  font-size: 6rem; /* レスポンシブサイズ */
+  font-size: 4rem; /* レスポンシブサイズ */
   color: gray;  
   line-height:1;
   margin:0;
   font-family:"Comic Sans MS";
+/*  font-family:"Yu Gothic UI";*/
   font-style: italic;
   font-variant-numeric:tabular-nums;/* 等幅.効果なし */
   style="text-align:right"/* なんでか順番変えるとダメ */
-  float: left;
+/*  float: left;*/
   cursor: pointer;
-  background-color: #e8f8f8;
-  border-radius: 40px 40px 40px 40px;
+/*  background-color: #e8f8f8;*/
+/*  border-radius: 40px 40px 40px 40px;*/
 }
 
 
@@ -66,5 +76,19 @@ p {
   margin-bottom: 100px;
 }
 
+#chat{
+  display:inline-block;
+  text-align:center;
+  color: red;  display: block;
+  cursor: pointer;
+/*  border: 5px solid #232323; */
+  float:left;
+  margin-right: 5px;
+  font-family:"Comic Sans MS";
+/*  font-family:"Yu Gothic UI";*/
+  font-size: 6rem; /* レスポンシブサイズ */
+/*background-color: #c4e6ee;
+border-radius: 40px 40px 40px 40px;*/
+}
 
 
