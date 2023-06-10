@@ -58,10 +58,20 @@
 
   </head>
   <body>
+
+
  <script src="./count.js"></script>
     
     <div>&nbsp;</div>
     <p></p>
+<form>
+  <label> <input type="radio" class="my-radio" value="aaa" checked />All </label>
+  <label> <input type="radio" class="my-radio" value="bbb" />AAA </label>
+  <label> <input type="radio" class="my-radio" value="bbb" />BBB </label>
+  <label> <input type="radio" class="my-radio" value="ccc" />CCC </label>
+  <label> <input type="radio" class="my-radio" value="ccc" />DDD </label>
+</form>
+
     <!-- 計算式 -->
     <div id="word">
 

@@ -15,7 +15,13 @@ body
 /* idのスタイルは#を頭につける。classは. */
 /* 同じスタイルを複数個所に使いまわすときはclassのほうがいい */
 
-
+.my-radio {
+  /* 色の変更※枠線の色は変更できない */
+  accent-color: red;
+  /* 大きさ */
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
 
 
 #next{

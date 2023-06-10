@@ -104,8 +104,24 @@ openReq.onsuccess = function (event) {
 		request.onsuccess = function(event) {
 			// 取得が成功した場合の関数宣言（event.target.result にデータが返る）
 			level = event.target.result.cnt;
-			document.getElementById('countDisplay').innerHTML = level;
+//			document.getElementById('countDisplay').innerHTML = level;
 		};
+
+    let checkValue = "";
+let chk = document.getElementsByName('chk');
+let len = chk.length;
+
+
+    for (let i = 0; i < len; i++){
+ 	   if (chk.item(i).checked){
+        checkValue = chk.item(i).value;
+break;
+    	}
+}
+    document.getElementById("countDisplay").textContent = checkValue;
+
+
+
 	});
 
 
