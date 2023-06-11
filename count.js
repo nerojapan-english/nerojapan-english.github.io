@@ -5,6 +5,9 @@ var count = 0;
 //　DB名を指定して接続
 var openReq  = indexedDB.open(dbName, dbVersion);
 
+var wordList = new Array(0);
+
+
 // エラー時
 openReq.onerror = function (event) {
     // 接続に失敗
@@ -99,35 +102,88 @@ openReq.onsuccess = function (event) {
 		var level = 0;
 
 		// testdbデータベースオープン
-		//var request = store.get({id:num});
 		var request = store.get(getNum());
 		request.onsuccess = function(event) {
 			// 取得が成功した場合の関数宣言（event.target.result にデータが返る）
 			level = event.target.result.cnt;
-//			document.getElementById('countDisplay').innerHTML = level;
 		};
-
-    let checkValue = "";
-let chk = document.getElementsByName('chk');
-let len = chk.length;
-
-
-    for (let i = 0; i < len; i++){
- 	   if (chk.item(i).checked){
-        checkValue = chk.item(i).value;
-break;
-    	}
-}
-    document.getElementById("countDisplay").textContent = checkValue;
-
-
-
 	});
 
 
-
+    document.getElementById('radioGroup').addEventListener('click', function () {
+		var db = event.target.result;
+	    var trans = db.transaction(storeName, "readwrite");
+	    var store = trans.objectStore(storeName);
+		var element = document.getElementById( "radioGroup" ) ;
+		// form要素内のラジオボタングループ(name="hoge")を取得
+		var radioNodeList = element.chk ;
+		// 選択状態の値(value)を取得 (Bが選択状態なら"b"が返る)
+		var a = radioNodeList.value ;
+		makeList(store,a);
+    });
 
 }
+
+
+
+
+
+function makeList(store,num) {
+
+	// 全体の単語数
+	var wordNum = getWordNum();
+	var level = 0;
+	
+	// 配列のクリア
+	wordList.splice(0);
+
+	var request = store.getAll();
+	request.onsuccess = function(event) {
+		const rows = event.target.result;
+		for (var i = 0; i < wordNum; i++) {
+			
+				// 取得が成功した場合の関数宣言（event.target.result にデータが返る）
+				level = rows[i];
+				if (Number(num) == level.cnt) {
+//					document.getElementById('countDisplay').innerHTML = "Yes";
+						let w1 = arrayTest3[i][0];
+						let w2 = arrayTest3[i][1];
+						wordList.push(arrayTest3[i]);
+//						wordList.push(["abc","123"]);
+				} else {
+//					document.getElementById('countDisplay').innerHTML = "No";
+				}
+				
+		}
+		setWordList(wordList);
+
+
+
+	}
+
+
+//	for (var i = 0; i < wordNum; i++) {
+//		var request = store.get(i);
+//		request.onsuccess = function(event) {
+//			// 取得が成功した場合の関数宣言（event.target.result にデータが返る）
+//			level = event.target.result.cnt;
+//			if (Number(num) == level) {
+//				document.getElementById('countDisplay').innerHTML = "Yes";
+//					let w1 = arrayTest3[i][0];
+//					let w2 = arrayTest3[i][1];
+//					wordList.push([w1,w2]);
+//					wordList.push(["abc","123"]);
+//			} else {
+//				document.getElementById('countDisplay').innerHTML = "No";
+//			}
+//			
+//		}
+//	}
+//	setWordList(wordList);
+}
+
+
+
 
 function updateDb (db, store_name, cnt) {
     var trans = db.transaction(store_name, "readwrite");

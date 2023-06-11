@@ -12,6 +12,7 @@ let level = 0;
 
 //let words = arrayTest2;
 let words = arrayTest3;
+let wordsNum = words.length;
 
 
 
@@ -100,9 +101,15 @@ function getNum(){
 
 
 function getWordNum(){
-	return words.length;
+	return wordsNum;
 	
 }
+
+function setWordList(newList){
+	words = newList;
+//	wordsNum = words.length;
+}
+
 
 
 
