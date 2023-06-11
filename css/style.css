@@ -34,7 +34,7 @@ body
   margin-right: 5px;
   font-family:"Comic Sans MS";
 /*  font-family:"Yu Gothic UI";*/
-  font-size: 6rem; /* レスポンシブサイズ */
+  font-size: 3rem; /* レスポンシブサイズ */
 /*background-color: #c4e6ee;
 border-radius: 40px 40px 40px 40px;*/
 }
@@ -98,3 +98,63 @@ border-radius: 40px 40px 40px 40px;*/
 }
 
 
+
+#btn1{
+  text-align:center;
+  color: red;  display: block;
+  cursor: pointer;
+/*  border: 5px solid #232323; */
+
+  font-family:"Comic Sans MS";
+  font-size: 2rem; /* レスポンシブサイズ */
+background-color: #c4e6ee;
+width:8rem
+justify-content: center;
+}
+
+
+#btn2{
+  text-align:center;
+  color: red;  display: block;
+  cursor: pointer;
+/*  border: 5px solid #232323; */
+
+  font-family:"Comic Sans MS";
+  font-size: 2rem; /* レスポンシブサイズ */
+background-color: #c4e6ee;
+width:8rem
+justify-content: center;
+}
+
+#btn3{
+  text-align:center;
+  color: red;  display: block;
+  cursor: pointer;
+/*  border: 5px solid #232323; */
+
+  font-family:"Comic Sans MS";
+  font-size: 2rem; /* レスポンシブサイズ */
+background-color: #c4e6ee;
+width:8rem
+justify-content: center;
+}
+
+#btn4{
+  text-align:center;
+  color: red;  display: block;
+  cursor: pointer;
+/*  border: 5px solid #232323; */
+
+  font-family:"Comic Sans MS";
+  font-size: 2rem; /* レスポンシブサイズ */
+background-color: #c4e6ee;
+width:8rem
+justify-content: center;
+}
+
+#table{
+margin:5;
+width:10rem
+  font-size: 10rem; /* レスポンシブサイズ */
+
+}

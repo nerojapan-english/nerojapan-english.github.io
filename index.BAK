@@ -64,7 +64,8 @@
     
     <div>&nbsp;</div>
     <p></p>
-<form id="radioGroup" onclick="onClickChk()">
+<!-- <form id="radioGroup" onclick="onClickChk()"> -->
+<form id="radioGroup">
   <label> <input type="radio" class="my-radio" name="chk" value="0" checked />All </label>
   <label> <input type="radio" class="my-radio" name="chk" value="1" />AAA </label>
   <label> <input type="radio" class="my-radio" name="chk" value="2" />BBB </label>
@@ -97,13 +98,26 @@
     <p></p>
 
     <p></p>
-    <!-- ボタン -->
-<!--    <div id="chat" onclick="onClickChat()">&nbsp;Chat&nbsp; </div> -->
-    <p></p>
 
-
-    <div class="wrapper">
         <div id="countDisplay" class="count-display">0</div>
+	<br>
+<br>
+
+
+<table>
+<tr>
+<td><button id="btn1" >ボタン</button></td>
+<td><button id="btn2" >ボタン</button></td>
+<td><button id="btn3" >ボタン</button></td>
+<td><button id="btn4" >ボタン</button></td>
+
+</tr>
+</table>
+
+<table>
+<tr>
+
+
         <div class="btns">
             <button id="btn1" class="btn">btn1</button>
             <button id="btn2" class="btn">btn2</button>
@@ -111,8 +125,8 @@
             <button id="btn4" class="btn">btn4</button>
         </div>
         <button id="countReset"  class="reset">reset</button>
-    </div>
-
+</tr>
+</table>
 <script>
 
 //
