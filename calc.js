@@ -11,7 +11,7 @@ let status = 0;
 let level = 0;
 
 //let words = arrayTest2;
-let words = arrayTest3;
+let words = arrayTest4;
 let wordsNum = words.length;
 
 

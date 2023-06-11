@@ -146,8 +146,8 @@ function makeList(store,num) {
 				level = rows[i];
 				if (Number(num) == level.cnt) {
 //					document.getElementById('countDisplay').innerHTML = "Yes";
-						let w1 = arrayTest3[i][0];
-						let w2 = arrayTest3[i][1];
+						let w1 = arrayTest4[i][0];
+						let w2 = arrayTest4[i][1];
 						wordList.push(arrayTest3[i]);
 //						wordList.push(["abc","123"]);
 				} else {
