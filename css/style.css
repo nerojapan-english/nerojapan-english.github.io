@@ -107,7 +107,7 @@ border-radius: 40px 40px 40px 40px;*/
 
   font-family:"Comic Sans MS";
   font-size: 2rem; /* レスポンシブサイズ */
-background-color: #c4e6ee;
+background-color: green;
 width:8rem
 justify-content: center;
 }
@@ -121,7 +121,7 @@ justify-content: center;
 
   font-family:"Comic Sans MS";
   font-size: 2rem; /* レスポンシブサイズ */
-background-color: #c4e6ee;
+background-color: blue;
 width:8rem
 justify-content: center;
 }
@@ -134,7 +134,7 @@ justify-content: center;
 
   font-family:"Comic Sans MS";
   font-size: 2rem; /* レスポンシブサイズ */
-background-color: #c4e6ee;
+background-color: yellow;
 width:8rem
 justify-content: center;
 }
@@ -147,7 +147,7 @@ justify-content: center;
 
   font-family:"Comic Sans MS";
   font-size: 2rem; /* レスポンシブサイズ */
-background-color: #c4e6ee;
+background-color: red;
 width:8rem
 justify-content: center;
 }
