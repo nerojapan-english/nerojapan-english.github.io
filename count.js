@@ -137,29 +137,49 @@ function makeList(store,num) {
 	// 配列のクリア
 	wordList.splice(0);
 
-	var request = store.getAll();
-	request.onsuccess = function(event) {
-		const rows = event.target.result;
-		for (var i = 0; i < wordNum; i++) {
-			
-				// 取得が成功した場合の関数宣言（event.target.result にデータが返る）
-				level = rows[i];
-				if (Number(num) == level.cnt) {
-//					document.getElementById('countDisplay').innerHTML = "Yes";
-						let w1 = arrayTest4[i][0];
-						let w2 = arrayTest4[i][1];
-						wordList.push(arrayTest3[i]);
-//						wordList.push(["abc","123"]);
-				} else {
-//					document.getElementById('countDisplay').innerHTML = "No";
-				}
-				
-		}
-		setWordList(wordList);
+//	var request = store.getAll();
+//	request.onsuccess = function(event) {
+//		const rows = event.target.result;
+//		for (var i = 0; i < wordNum; i++) {
+//			
+//				// 取得が成功した場合の関数宣言（event.target.result にデータが返る）
+//				level = rows[i];
+//				if (Number(num) == level.cnt) {
+//						wordList.push(arrayTest4[i]);
+//				} else {
+//				}
+//				
+//		}
+//		setWordList(wordList);
+//
+//
+//
+//	}
 
-
-
+	if (Number(num) == 0) {
+		setWordList(arrayTest4);
+		return;
 	}
+
+
+	let request = store.openCursor();
+
+	// カーソルで見つかった各本に対して呼び出されます
+	request.onsuccess = function() {
+		let cursor = request.result;
+  		if (cursor) {
+    		let value = cursor.value.cnt; // book オブジェクト
+			if (Number(num) == value) {
+				wordList.push(arrayTest4[cursor.value.id]);
+			}
+
+    		cursor.continue();
+  		} else {
+			setWordList(wordList);
+  		}
+	};
+
+
 
 
 //	for (var i = 0; i < wordNum; i++) {

@@ -107,6 +107,7 @@ function getWordNum(){
 
 function setWordList(newList){
 	words = newList;
+	num1=0;
 //	wordsNum = words.length;
 }
 
