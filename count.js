@@ -94,7 +94,7 @@ openReq.onsuccess = function (event) {
 
 
     document.getElementById('next').addEventListener('click', function () {
-
+		increNum();
 		init();
 		var db = event.target.result;
 	    var trans = db.transaction(storeName, "readwrite");

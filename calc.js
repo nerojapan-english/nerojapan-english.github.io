@@ -23,6 +23,7 @@ let wordsNum = words.length;
 
 function init()
 {
+	num2=0;
     updateFormula();
     updateAnswer();
 }
@@ -73,10 +74,10 @@ function get_test2(index)
     retStr = "&nbsp;&nbsp;"+arrayTest4[num1][0];
 	}
 	numAnswer = num1;
-	num1 = num1 + 1;
-	if (num1 >= max) {
-		num1=0;
-	}
+//	num1 = num1 + 1;
+//	if (num1 >= max) {
+//		num1=0;
+//	}
 	return retStr;
 
 }
@@ -98,7 +99,13 @@ function getNum(){
 	
 }
 
+function increNum(){
 
+	num1 = num1 + 1;
+	if (num1 >= words.length) {
+		num1=0;
+	}
+}
 
 function getWordNum(){
 	return wordsNum;
