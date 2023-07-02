@@ -156,10 +156,11 @@ function makeList(store,num) {
 //
 //	}
 
-	if (Number(num) == 0) {
-		setWordList(arrayTest4);
-		return;
-	}
+// 0‚Ìê‡‚Í‚·‚×‚Ä‚Å‚Í‚È‚­ALv0‚Ì‚à‚Ì‚¾‚¯•\¦‚·‚é
+//	if (Number(num) == 0) {
+//		setWordList(arrayTest4);
+//		return;
+//	}
 
 
 	let request = store.openCursor();
