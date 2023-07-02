@@ -34,7 +34,7 @@ body
   margin-right: 5px;
   font-family:"Comic Sans MS";
 /*  font-family:"Yu Gothic UI";*/
-  font-size: 3rem; /* レスポンシブサイズ */
+  font-size: 5rem; /* レスポンシブサイズ */
 /*background-color: #c4e6ee;
 border-radius: 40px 40px 40px 40px;*/
 }
@@ -109,6 +109,7 @@ border-radius: 40px 40px 40px 40px;*/
   font-size: 2rem; /* レスポンシブサイズ */
 background-color: green;
 width:8rem
+height:8rem
 justify-content: center;
 }
 
@@ -123,6 +124,7 @@ justify-content: center;
   font-size: 2rem; /* レスポンシブサイズ */
 background-color: blue;
 width:8rem
+height:8rem
 justify-content: center;
 }
 
@@ -136,6 +138,7 @@ justify-content: center;
   font-size: 2rem; /* レスポンシブサイズ */
 background-color: yellow;
 width:8rem
+height:8rem
 justify-content: center;
 }
 
@@ -149,6 +152,7 @@ justify-content: center;
   font-size: 2rem; /* レスポンシブサイズ */
 background-color: red;
 width:8rem
+height:8rem
 justify-content: center;
 }
 
