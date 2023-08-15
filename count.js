@@ -194,6 +194,9 @@ async function makeList(store,lv) {
 
     		cursor.continue();
   		} else {
+			if (wordList.length == 0) {
+				wordList.push(9999);
+			}
 			setWordList(wordList);
 			compFlg = 1;
   		}
@@ -244,21 +247,34 @@ function updateDb (db, store_name,index, lv) {
 function getWordFromWordList(index) 
 {
 	var retStr;
+	if (wordList[0] == 9999) {
+retStr = "&nbsp;No word"
+	} else {
 	retStr = "&nbsp;"+arrayTest4[wordList[index]][0];
+	}
 	return retStr;
 }
 
 function getansFromWordList(index) 
 {
 	var retStr;
+	if (wordList[0] == 9999) {
+retStr = "&nbsp;XXXXXX"
+	} else {
 	retStr = "&nbsp;"+arrayTest4[wordList[index]][1];
+	}
+
 	return retStr;
 }
 
 function getWordIndexFromWordList(index) 
 {
 	var retIndex;
+	if (wordList[0] == 9999) {
+	retIndex = 9999;
+	} else {
 	retIndex = wordList[index];
+}
 	return retIndex;
 }
 
