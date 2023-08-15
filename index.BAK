@@ -84,7 +84,6 @@
 
 	    <!-- x = ? -->
     	<div id="answer">
-        	<div>&nbsp;</div>
         	<div id="ans_no0" onclick="onClickAns(0)">x = ?</div>
         	<div>&nbsp;</div>
     	</div>
