@@ -244,14 +244,14 @@ function updateDb (db, store_name,index, lv) {
 function getWordFromWordList(index) 
 {
 	var retStr;
-	retStr = "&nbsp;&nbsp;"+arrayTest4[wordList[index]][0];
+	retStr = "&nbsp;"+arrayTest4[wordList[index]][0];
 	return retStr;
 }
 
 function getansFromWordList(index) 
 {
 	var retStr;
-	retStr = "&nbsp;&nbsp;"+arrayTest4[wordList[index]][1];
+	retStr = "&nbsp;"+arrayTest4[wordList[index]][1];
 	return retStr;
 }
 

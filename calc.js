@@ -57,7 +57,7 @@ function updateFormula(index)
 
 function updateAnswer() 
 {
-  var str = "&nbsp;&nbsp;"+"?????"
+  var str = "&nbsp;"+"?????"
 //  for (let i = 0; i < arrayTest2.length; i++){
       document.getElementById("ans_no0").innerHTML = str;
 //  }
@@ -90,9 +90,9 @@ function get_test2(index)
 
 
   if ( status == 0 ) {
-    retStr =  "&nbsp;&nbsp;"+words[num1][0];
+    retStr =  "&nbsp;"+words[num1][0];
   } else {
-    retStr = "&nbsp;&nbsp;"+arrayTest4[num1][0];
+    retStr = "&nbsp;"+arrayTest4[num1][0];
 	}
 	numAnswer = num1;
 //	num1 = num1 + 1;
@@ -107,9 +107,9 @@ function get_test2(index)
 function get_ans2(num){
 //    var str = `x = ${ arrayTest[num]}`;
   if ( status == 0 ) {
-	return "&nbsp;&nbsp;"+words[numAnswer][1];
+	return "&nbsp;"+words[numAnswer][1];
   } else {
-	return "&nbsp;&nbsp;"+arrayTest4[numAnswer][1];
+	return "&nbsp;"+arrayTest4[numAnswer][1];
 	}
 	
 }
