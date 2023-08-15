@@ -1,5 +1,5 @@
-var dbName = 'sampleDB5';
-var dbVersion = '2';
+var dbName = 'sampleDB6';
+var dbVersion = '1';
 var storeName  = 'counts';
 var count = 0;
 //　DB名を指定して接続
@@ -25,7 +25,7 @@ openReq.onupgradeneeded = function (event) {
 //	var trans = db.transaction(storeName, "readwrite");
 //    var store = trans.objectStore(storeName);
 	
-	var wordNum = getWordNum();
+	var wordNum = getMasterListNum();
 
 	for (let i = 0; i < wordNum; i++) {
 		objectStore.put({
@@ -41,45 +41,53 @@ openReq.onsuccess = function (event) {
     var db = event.target.result;
     var trans = db.transaction(storeName, 'readonly');
     var store = trans.objectStore(storeName);
-    var getReq = store.get(1);
-
-    getReq.onerror = function (event) {
-        count = 0;
-        console.log('取得失敗');
-    }
-    getReq.onsuccess = function (event) {
-        console.log('取得成功');
-        if (typeof event.target.result === 'undefined') {
-            count = 0;
-        } else {
-            count = event.target.result.cnt;
-            console.log(count);
-        }
-        document.getElementById('countDisplay').innerHTML = count;
-    }
 
 
+//    var getReq = store.get(1);
+//
+//    getReq.onerror = function (event) {
+//        count = 0;
+//        console.log('取得失敗');
+//    }
+//    getReq.onsuccess = function (event) {
+//        console.log('取得成功');
+//        if (typeof event.target.result === 'undefined') {
+//            count = 0;
+//        } else {
+//            count = event.target.result.cnt;
+//            console.log(count);
+//        }
+//        document.getElementById('countDisplay').innerHTML = count;
+//    }
+
+	// 選択状態の値(value)を取得 (1が選択状態なら"1"が返る)
+	makeList(store,Number("0"));
+	
+
+
+	// Lv設定のカラーボタン 押下
     document.getElementById('btn1').addEventListener('click', function () {
-        updateDb(db, storeName, 1);
-        document.getElementById('countDisplay').innerHTML = 1;
+        updateDb(db, storeName,wordList[getNum()] , 1);
+//        document.getElementById('countDisplay').innerHTML = 1;
     });
 
     document.getElementById('btn2').addEventListener('click', function () {
-        updateDb(db, storeName, 2);
-        document.getElementById('countDisplay').innerHTML = 2;
+        updateDb(db, storeName,wordList[getNum()] , 2);
+//        document.getElementById('countDisplay').innerHTML = 2;
     });
     document.getElementById('btn3').addEventListener('click', function () {
-        updateDb(db, storeName, 3);
-        document.getElementById('countDisplay').innerHTML = 3;
+        updateDb(db, storeName,wordList[getNum()] , 3);
+//        document.getElementById('countDisplay').innerHTML = 3;
     });
     document.getElementById('btn4').addEventListener('click', function () {
-        updateDb(db, storeName, 4);
-        document.getElementById('countDisplay').innerHTML = 4;
+        updateDb(db, storeName,wordList[getNum()] ,  4);
+//        document.getElementById('countDisplay').innerHTML = 4;
     });
 
+	// reset 押下
     document.getElementById('countReset').addEventListener('click', function () {
         count = 0;
-        var putReq = updateDb(db, storeName, count);
+        var putReq = updateDb(db, storeName,wordList[getNum()], count);
 
         putReq.onsuccess = function (event) {
             console.log('更新成功');
@@ -92,24 +100,30 @@ openReq.onsuccess = function (event) {
 
 
 
-
+	// next 押下
     document.getElementById('next').addEventListener('click', function () {
 		increNum();
-		init();
-		var db = event.target.result;
-	    var trans = db.transaction(storeName, "readwrite");
-	    var store = trans.objectStore(storeName);
-		var level = 0;
+//		init();
 
-		// testdbデータベースオープン
-		var request = store.get(getNum());
-		request.onsuccess = function(event) {
-			// 取得が成功した場合の関数宣言（event.target.result にデータが返る）
-			level = event.target.result.cnt;
-		};
+		updateDisplay(getNum());
+		
+
+
+//		var db = event.target.result;
+//	    var trans = db.transaction(storeName, "readwrite");
+//	    var store = trans.objectStore(storeName);
+//		var level = 0;
+//
+//		// testdbデータベースオープン
+//		var request = store.get(getNum());
+//		request.onsuccess = function(event) {
+//			// 取得が成功した場合の関数宣言（event.target.result にデータが返る）
+//			level = event.target.result.cnt;
+//		};
 	});
 
 
+	// Lv選択のラジオボタン 押下
     document.getElementById('radioGroup').addEventListener('click', function () {
 		var db = event.target.result;
 	    var trans = db.transaction(storeName, "readwrite");
@@ -119,19 +133,21 @@ openReq.onsuccess = function (event) {
 		var radioNodeList = element.chk ;
 		// 選択状態の値(value)を取得 (Bが選択状態なら"b"が返る)
 		var a = radioNodeList.value ;
-		makeList(store,a);
+		makeList(store,Number(a));
+//		init();
     });
 
 }
 
 
 
+const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 
-function makeList(store,num) {
+async function makeList(store,lv) {
 
 	// 全体の単語数
-	var wordNum = getWordNum();
+	var wordNum = getMasterListNum();
 	var level = 0;
 	
 	// 配列のクリア
@@ -162,7 +178,7 @@ function makeList(store,num) {
 //		return;
 //	}
 
-
+	let compFlg = 0;
 	let request = store.openCursor();
 
 	// カーソルで見つかった各本に対して呼び出されます
@@ -170,17 +186,24 @@ function makeList(store,num) {
 		let cursor = request.result;
   		if (cursor) {
     		let value = cursor.value.cnt; // book オブジェクト
-			if (Number(num) == value) {
-				wordList.push(arrayTest4[cursor.value.id]);
+			if (lv == value) {
+//				wordList.push(arrayTest4[cursor.value.id]);
+				wordList.push(cursor.value.id);
+
 			}
 
     		cursor.continue();
   		} else {
 			setWordList(wordList);
+			compFlg = 1;
   		}
 	};
 
+	while(compFlg == 0){
+await _sleep(100);
 
+	}
+	changeLevel();
 
 
 //	for (var i = 0; i < wordNum; i++) {
@@ -206,18 +229,37 @@ function makeList(store,num) {
 
 
 
-function updateDb (db, store_name, cnt) {
+function updateDb (db, store_name,index, lv) {
     var trans = db.transaction(store_name, "readwrite");
     var store = trans.objectStore(store_name);
-	var num = getNum();
+//	var num = getNum();
 
 	store.put({
-	    id:num,
-	    cnt:cnt
+	    id:index,
+	    cnt:lv
 	});
 }
 
 
+function getWordFromWordList(index) 
+{
+	var retStr;
+	retStr = "&nbsp;&nbsp;"+arrayTest4[wordList[index]][0];
+	return retStr;
+}
 
+function getansFromWordList(index) 
+{
+	var retStr;
+	retStr = "&nbsp;&nbsp;"+arrayTest4[wordList[index]][1];
+	return retStr;
+}
+
+function getWordIndexFromWordList(index) 
+{
+	var retIndex;
+	retIndex = wordList[index];
+	return retIndex;
+}
 
 

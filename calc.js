@@ -12,7 +12,7 @@ let level = 0;
 
 //let words = arrayTest2;
 let words = arrayTest4;
-let wordsNum = words.length;
+let wordsListNum = 0;
 
 
 
@@ -23,16 +23,36 @@ let wordsNum = words.length;
 
 function init()
 {
-	num2=0;
-    updateFormula();
+	num1=0;
+    updateFormula(0);
     updateAnswer();
 }
 
-function updateFormula() 
+function changeLevel()
+{
+	num1=0;
+    updateFormula(0);
+    updateAnswer();
+}
+
+
+
+function updateDisplay(index)
+{
+    updateFormula(index);
+    updateAnswer();
+}
+
+
+// 指定したindexのWordを表示
+function updateFormula(index) 
 {
 //  for (let i = 0; i < arrayTest2.length; i++){
-      document.getElementById("fm_no0").innerHTML = get_test2(0);
+//      document.getElementById("fm_no0").innerHTML = get_test2(0);
 //  }
+	document.getElementById("fm_no0").innerHTML = getWordFromWordList(index);
+	document.getElementById('countDisplay').innerHTML = getWordIndexFromWordList(index)+1;
+
 }
 
 function updateAnswer() 
@@ -46,6 +66,7 @@ function updateAnswer()
 // ------------------------------------------------------------------------
 //    内部処理
 // ------------------------------------------------------------------------
+
 
 function get_test2(index) 
 {
@@ -107,15 +128,25 @@ function increNum(){
 	}
 }
 
+
+
+
+
+function getMasterListNum(){
+	return arrayTest4.length;
+	
+}
+
+
 function getWordNum(){
-	return wordsNum;
+	return wordsListNum;
 	
 }
 
 function setWordList(newList){
 	words = newList;
 	num1=0;
-//	wordsNum = words.length;
+	wordsListNum = words.length;
 }
 
 
@@ -144,7 +175,7 @@ function onClickChat() {
 
 function onClickAns(textNo) {
 //  var id = arrayTest2[textNo][1]
-  document.getElementById("ans_no0").innerHTML = get_ans2(textNo);
+  document.getElementById("ans_no0").innerHTML = getansFromWordList(getNum());
 };
 
 
