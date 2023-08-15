@@ -74,19 +74,19 @@
 </form>
 
     <!-- 計算式 -->
-    <div id="word">
+    <div id="word" class="parent">
 
-    	<div id="formula">
+    	<p>
         	<div>&nbsp;</div>
         	<div id="fm_no0"></div>
-    	</div>
-   	 <p></p>
+        	<div>&nbsp;</div>
+    	</p>
 
 	    <!-- x = ? -->
-    	<div id="answer">
+    	<p>
         	<div id="ans_no0" onclick="onClickAns(0)">x = ?</div>
         	<div>&nbsp;</div>
-    	</div>
+    	</p>
     </div>
 
 

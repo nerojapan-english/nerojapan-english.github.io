@@ -40,16 +40,19 @@ body
 border-radius: 40px 40px 40px 40px;*/
 }
 
+
+
 #word{
   background-color: #e8f8f8;
   border-radius: 40px 40px 40px 40px;
+vertical-align: middle;
+
 }
 
 #formula{
   text-align:left;
   font-size: 8rem; /* レスポンシブサイズ */
   color: gray;  
-  margin:0;
   font-family:"Comic Sans MS";
 /*  font-family:"Yu Gothic UI";*/
 /*  font-style: italic;*/
@@ -57,6 +60,7 @@ border-radius: 40px 40px 40px 40px;*/
 /*  float: left;*/
 /*  background-color: #e8f8f8;*/
 /*  border-radius: 40px 40px 40px 40px;*/
+
 }
 
 #answer{
