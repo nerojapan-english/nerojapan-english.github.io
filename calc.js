@@ -162,16 +162,6 @@ function setWordList(newList){
 //}
 
 
-function onClickChat() {
-  if ( status == 0 ) {
-		status = 1;
-		document.getElementById("chat").innerHTML = "&nbsp;Word&nbsp;";
-  }else {
-		status = 0;
-		document.getElementById("chat").innerHTML = "&nbsp;Chat&nbsp;";
-	}
-	init();
-}
 
 function onClickAns(textNo) {
 //  var id = arrayTest2[textNo][1]
