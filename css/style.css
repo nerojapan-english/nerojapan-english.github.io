@@ -15,12 +15,13 @@ body
 /* idのスタイルは#を頭につける。classは. */
 /* 同じスタイルを複数個所に使いまわすときはclassのほうがいい */
 
+/* ラジオボタン */
 .my-radio {
   /* 色の変更※枠線の色は変更できない */
   accent-color: red;
   /* 大きさ */
-  inline-size: 40px;
-  block-size: 40px;
+  inline-size: 80px;
+  block-size: 80px;
 }
 
 
@@ -46,7 +47,7 @@ border-radius: 40px 40px 40px 40px;*/
 
 #formula{
   text-align:left;
-  font-size: 4rem; /* レスポンシブサイズ */
+  font-size: 8rem; /* レスポンシブサイズ */
   color: gray;  
   line-height:1;
   margin:0;
@@ -62,7 +63,7 @@ border-radius: 40px 40px 40px 40px;*/
 
 #answer{
   text-align:left;
-  font-size: 4rem; /* レスポンシブサイズ */
+  font-size: 8rem; /* レスポンシブサイズ */
   color: gray;  
   line-height:1;
   margin:0;
@@ -109,7 +110,7 @@ border-radius: 40px 40px 40px 40px;*/
   font-size: 2rem; /* レスポンシブサイズ */
 background-color: green;
 width:8rem
-height:8rem
+height:16rem
 justify-content: center;
 }
 
@@ -124,7 +125,7 @@ justify-content: center;
   font-size: 2rem; /* レスポンシブサイズ */
 background-color: blue;
 width:8rem
-height:8rem
+height:16rem
 justify-content: center;
 }
 
@@ -138,7 +139,7 @@ justify-content: center;
   font-size: 2rem; /* レスポンシブサイズ */
 background-color: yellow;
 width:8rem
-height:8rem
+height:16rem
 justify-content: center;
 }
 
@@ -152,13 +153,13 @@ justify-content: center;
   font-size: 2rem; /* レスポンシブサイズ */
 background-color: red;
 width:8rem
-height:8rem
+height:16rem
 justify-content: center;
 }
 
 #table{
 margin:5;
 width:10rem
-  font-size: 10rem; /* レスポンシブサイズ */
+height:16rem
 
 }
